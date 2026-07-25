@@ -98,6 +98,7 @@ check any errors in specific class pairs which share vocabulary.
 
 
 ## Project Structure
+```
 ├── data/ # AG News train/test CSVs 
 ├── experiments/ # Customer-ticket investigation (see Overview)
 ├── src/
@@ -111,6 +112,7 @@ check any errors in specific class pairs which share vocabulary.
 │ └── confusion_matrix.png
 ├── requirements.txt
 └── README.md
+```
 
 ## Author
 **Muhammad Shaheer Malik**

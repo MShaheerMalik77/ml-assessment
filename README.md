@@ -1,11 +1,11 @@
 # ML Assessment (Solvefy)
 
-> Performed Exploratory Data Analysis (EDA) and trained Multinomial Naive Bayes and Logistic Regression on Customer Support Ticket Dataset (Suraj520)
+> Performed Exploratory Data Analysis (EDA) and trained Multinomial Naive Bayes and Logistic Regression on AG News Dataset
 
 
 ## Overview
 
-While working on this assessment, I performed EDA on the dataset, to understand its limitations and prepare it for model training, then, after TF-IDF vectorization I trained Multinomial Naive Bayes and Logistic Regression Models on the processed data.
+I initially attempted this task on a Kaggle Customer Support Ticket dataset, as it was on topic for query . Both Naive Bayes and Logistic Regression performed at around 18-20% on 5 balanced classes using ticket description and subject fields. Upon inspection of the raw text, I found unfilled template placeholders (e.g. {product_purchased}) and very similar generic phrasing reused across categories, showing that there is little context available to differentiate classes. I switched to AG News to deliver a working, evaluable pipeline.
 
 ## Features
 
@@ -24,12 +24,12 @@ While working on this assessment, I performed EDA on the dataset, to understand 
 
 ##  Data Analysis
 
-The EDA showed that the class distribution is mostly balanced, which is important to note as a skewed distribution would negatively impact the model training.
+The EDA showed that the class distribution is well balanced. It is important to note this as a skewed distribution would negatively impact the model training.
 ---
 
 ## Findings
 
-Both models post-training achieved a mere 20% accuracy, despite relatively balanced classes. Upon inspection, the output of Ticket Types corresponding to Ticket Description shows that the description for most tickets is very similar. As the dataset was synthetically generated,  the raw text had heavy template reuse and placeholder tokens across categories, which shows that ticket description does not serve as an accurate indicator of a class. I confirmed this wasn't a preprocessing or leakage bug by checking X. After replacing ticket description with ticket subject, both models reported an accuracy of 18%, showcasing that the problem does indeed lie with the dataset. Feature Engineering would result in a data type that contains the same lable-text mismatch, therefore I will be making use of the AG News dataset for classification.
+Logistic Regression Edges out Multinomial Naive Bayes slightly, reporting an 88.9% Accuracy over Naive Bayes' 87.1%. In this case I will proceed further using Logistic Regression and modularize the pipeline into seperate Python files for ease in reproduction. I will also add the API using FastAPI to serve the model. 
 
 ---
 

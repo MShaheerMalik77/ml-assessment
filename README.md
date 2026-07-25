@@ -17,6 +17,8 @@ within the available time.
 
 ## Setup Instructions
 
+Tested on a clean clone with no pre-existing model.pkl
+
 1. Clone the repo and install dependencies:
 ```bash
    git clone https://github.com/MShaheerMalik77/ml-assessment.git

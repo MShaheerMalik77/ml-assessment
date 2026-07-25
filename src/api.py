@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 from preprocessing import clean_text
 
-MODEL_PATH = Path("models") / "model.pkl"
+MODEL_PATH = Path(__file__).resolve().parent / "models" / "model.pkl"
 
 app = FastAPI(
     title="Customer Query Classification API",

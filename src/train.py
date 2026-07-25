@@ -14,9 +14,10 @@ import matplotlib.pyplot as plt
 from preprocessing import clean_text, LABEL_MAP
 
 RANDOM_STATE = 42
-DATA_DIR = Path("data")
-MODEL_DIR = Path("models")
-REPORT_DIR = Path("reports")
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data"
+MODEL_DIR = BASE_DIR / "src" / "models"
+REPORT_DIR = BASE_DIR / "src" / "reports"
 
 
 def load_data():

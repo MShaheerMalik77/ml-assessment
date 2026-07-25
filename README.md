@@ -29,4 +29,9 @@ The EDA showed that the class distribution is mostly balanced, which is importan
 
 ## Findings
 
-Both models post-training achieved a mere 20% accuracy, despite relatively balanced classes. Upon inspection, the output of Ticket Types corresponding to Ticket Description shows that the description for most tickets is very similar. As the dataset was synthetically generated,  the raw text had heavy template reuse and placeholder tokens across categories, which shows that ticket description does not serve as an accurate indicator of a class. I confirmed this wasn't a preprocessing or leakage bug by checking X. In the next iteration, I will use Ticket Subject instead of Ticket Description to test if the dataset can be used for classification training.
+Both models post-training achieved a mere 20% accuracy, despite relatively balanced classes. Upon inspection, the output of Ticket Types corresponding to Ticket Description shows that the description for most tickets is very similar. As the dataset was synthetically generated,  the raw text had heavy template reuse and placeholder tokens across categories, which shows that ticket description does not serve as an accurate indicator of a class. I confirmed this wasn't a preprocessing or leakage bug by checking X. After replacing ticket description with ticket subject, both models reported an accuracy of 18%, showcasing that the problem does indeed lie with the dataset. Feature Engineering would result in a data type that contains the same lable-text mismatch, therefore I will be making use of the AG News dataset for classification.
+
+---
+
+## Author
+**Muhammad Shaheer Malik**

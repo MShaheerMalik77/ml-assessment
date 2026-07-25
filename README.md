@@ -1,11 +1,11 @@
 # ML Assessment (Solvefy)
 
-> Performed Exploratory Data Analysis (EDA) on Customer Support Ticket Dataset (Suraj520)
+> Performed Exploratory Data Analysis (EDA) and trained Multinomial Naive Bayes and Logistic Regression on Customer Support Ticket Dataset (Suraj520)
 
 
 ## Overview
 
-In this iteration of the task, I performed EDA on the dataset, to understand its limitations and prepare it for model training.
+While working on this assessment, I performed EDA on the dataset, to understand its limitations and prepare it for model training, then, after TF-IDF vectorization I trained Multinomial Naive Bayes and Logistic Regression Models on the processed data.
 
 ## Features
 
@@ -16,11 +16,17 @@ In this iteration of the task, I performed EDA on the dataset, to understand its
 - Sanity Check
 - Preprocessing
 - Train Test Split
-
+- TF-IDF Vectorization
+- Multinomial Naive Bayes
+- Logistic Regression
+- Performance Metrics
 ---
 
-## Analysis
+##  Data Analysis
 
-The EDA showed that the class distribution has a slight skew, which is important to note as a skewed distribution would negatively impact the model training. Up next I will use TF-IDF to vectorize and then compare Naive Bayes with Logistic Regression to identify which model performs with more accuracy. After this, if one model's F1 Macro is notably higher than accuracy I would need to handle minority classes better.
-
+The EDA showed that the class distribution is mostly balanced, which is important to note as a skewed distribution would negatively impact the model training.
 ---
+
+## Findings
+
+Both models post-training achieved a mere 20% accuracy, despite relatively balanced classes. Upon inspection, the output of Ticket Types corresponding to Ticket Description shows that the description for most tickets is very similar. As the dataset was synthetically generated,  the raw text had heavy template reuse and placeholder tokens across categories, which shows that ticket description does not serve as an accurate indicator of a class. I confirmed this wasn't a preprocessing or leakage bug by checking X. In the next iteration, I will use Ticket Subject instead of Ticket Description to test if the dataset can be used for classification training.
